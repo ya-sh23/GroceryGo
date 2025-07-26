@@ -5,7 +5,7 @@ const orderSchema = mongoose.Schema(
     userId: { type: String, required: true, ref: "user" },
     items: [
       {
-        products: { type: String, required: true, ref: "product" },
+        product: { type: String, required: true, ref: "product" },
         quantity: { type: Number, required: true },
       },
     ],
@@ -15,9 +15,9 @@ const orderSchema = mongoose.Schema(
     paymentType: { type: String, required: true },
     isPaid: { type: Boolean, required: true },
   },
-  { timestamp: true }
+  { timestamps: true }
 );
 
-const Order = mongoose.model.order || mongoose.model("order", orderSchema);
+const Order = mongoose.model.order || mongoose.model("orders", orderSchema);
 
 export default Order;
