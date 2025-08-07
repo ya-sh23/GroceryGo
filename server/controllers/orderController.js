@@ -45,7 +45,8 @@ export const placeOrderCOD = async (req, res) => {
 //Place Order Stripe : /api/order/stripe
 export const placeOrderStripe = async (req, res) => {
   try {
-    const { userId, items, address } = req.body;
+    const userId = req.userId;
+    const { items, address } = req.body;
     const { origin } = req.headers;
     if (!address || items.length == 0) {
       return res.json({ success: false, message: "Invalid data" });
