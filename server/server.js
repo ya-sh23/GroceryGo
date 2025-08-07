@@ -22,9 +22,10 @@ await connectCloudinary();
 const allowedOrigins = [
   "http://localhost:5173",
   "https://grocerygo-blue.vercel.app",
+  "https://grocery-go-beta.vercel.app",
 ];
 
-app.post('/stripe',express.raw({type: 'application/json'}), stripeWebhooks)
+app.post("/stripe", express.raw({ type: "application/json" }), stripeWebhooks);
 
 //MiddleWare Configuration
 app.use(express.json());
