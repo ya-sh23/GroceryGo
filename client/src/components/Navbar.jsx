@@ -38,7 +38,7 @@ const Navbar = () => {
   }, [searchQuery]);
 
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
+    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all z-50">
       <NavLink to="/" onClick={() => setOpen(false)}>
         <img className="h-12" src={assets.logo} alt="logo" />
       </NavLink>
@@ -47,7 +47,11 @@ const Navbar = () => {
       <div className="hidden sm:flex items-center gap-8">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/products">All Products</NavLink>
-        <NavLink to="/">Contact</NavLink>
+        <NavLink to="/seller">
+          <button className="text-sm cursor-pointer px-3 py-1 bg-white hover:bg-[#4fbf8b] hover:text-white transition text-primary rounded-full border border-primary">
+            Seller Login
+          </button>
+        </NavLink>
 
         <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">
           <input
@@ -136,7 +140,7 @@ const Navbar = () => {
         <div
           className={`${
             open ? "flex" : "hidden"
-          } absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden`}
+          } absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden z-50`}
         >
           <NavLink to="/" onClick={() => setOpen(false)}>
             Home
@@ -150,7 +154,9 @@ const Navbar = () => {
             </NavLink>
           )}
           <NavLink to="/" onClick={() => setOpen(false)}>
-            Contact
+            <button className="text-xs cursor-pointer px-3 py-1 bg-white hover:bg-[#4fbf8b] hover:text-white transition text-primary rounded-full border border-primary">
+              Seller Login
+            </button>
           </NavLink>
           {!user ? (
             <NavLink to="/login">
