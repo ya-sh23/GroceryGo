@@ -153,8 +153,8 @@ const Navbar = () => {
               My Orders
             </NavLink>
           )}
-          <NavLink to="/seller" onClick={() => setOpen(false)}>
-            <button className="text-xs cursor-pointer px-3 py-1 bg-white hover:bg-[#4fbf8b] hover:text-white transition text-primary rounded-full border border-primary">
+          <NavLink to="/seller">
+            <button className="text-sm cursor-pointer px-3 py-1 bg-white hover:bg-[#4fbf8b] hover:text-white transition text-primary rounded-full border border-primary">
               Seller Login
             </button>
           </NavLink>
